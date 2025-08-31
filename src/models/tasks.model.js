@@ -11,9 +11,10 @@ const TaskSchema = new mongoose.Schema({
         required: [true, 'Please provide description for the task'],
         trim: true
     },
-    task_status: {
-        type:Boolean,
-        default:false
+    status: {
+        type: String,
+        enum: ['pending', 'in-progress', 'completed'],
+        default: 'pending'
     }
 }, {timestamps:true}) /** create a default updated and created at in your collection */
 
